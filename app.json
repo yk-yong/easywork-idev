@@ -1,4 +1,5 @@
 {
   "name": "RNboilerplate",
-  "displayName": "RNboilerplate"
+  "displayName": "RNboilerplate",
+  "apiRoute": "https://hacker-news.firebaseio.com/v0"
 }
