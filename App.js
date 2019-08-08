@@ -9,6 +9,8 @@
 import React, { Component } from "react";
 
 import DemoHook from "./src/demo/DemoHook";
+import DemoDefault from "./src/demo/DemoDefault";
+import DemoHoC from "./src/demo/DemoHoC";
 
 
 type Props = {
@@ -16,7 +18,7 @@ type Props = {
 class App extends Component<Props> {
   render() {
     return (
-      <DemoHook />
+      <DemoHoC />
     );
   }
 }

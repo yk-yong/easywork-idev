@@ -14,9 +14,8 @@ import withItemDetails from "../HoC/withItemDetails";
 
 type Props = {
   details?: any,
-  itemID?: number
 }
-function NewsItem(props: Props) {
+export default function NewsItem(props: Props) {
   const { details } = props;
 
   return (
@@ -27,6 +26,3 @@ function NewsItem(props: Props) {
     </ListItem>
   );
 }
-
-
-export default withItemDetails(NewsItem);
