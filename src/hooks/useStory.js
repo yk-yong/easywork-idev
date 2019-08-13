@@ -12,7 +12,7 @@ import { useState, useEffect } from "react";
 import { apiRoute } from "../../app.json";
 
 export default function useStory(storyType: string) {
-  const [response, setResponse] = useState({});
+  const [response, setResponse] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [hasError, setHasError] = useState(false);
 
