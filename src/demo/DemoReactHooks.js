@@ -8,35 +8,14 @@
  * @format
  */
 
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { FlatList } from "react-native";
 import { Container, Content } from "native-base";
-import { apiRoute } from "../../app.json";
 import NewsItemWithAPIUsingHooks from "../components/NewsItemWithAPIUsingHooks";
-// import useStory from "../hooks/useStory";
+import useStory from "../hooks/useStory";
 
 export default function DemoReactHooks() {
-  // const topstories = useStory("topstories");
-
-  const [topStory, setTopStory] = useState([]);
-
-  useEffect(() => {
-    async function fetchTopStories() {
-      try {
-        const res = await fetch(`${apiRoute}/topstories.json?print=pretty`, {
-          method: "GET",
-        }).then(res => res.json());
-
-        if (res) {
-          setTopStory([...res]);
-        }
-      } catch (error) {
-        // handling error
-      }
-    }
-
-    fetchTopStories();
-  }, []);
+  const topstories = useStory("topstories");
 
   function renderStory({ item, }: { item: Object }) {
     return (
@@ -47,7 +26,7 @@ export default function DemoReactHooks() {
   return (
     <Container>
       <Content>
-        <FlatList data={topStory} keyExtractor={(item, index) => `${item}-${index}`} renderItem={renderStory} />
+        <FlatList data={topstories.response} keyExtractor={(item, index) => `${item}-${index}`} renderItem={renderStory} />
       </Content>
     </Container>
   );
